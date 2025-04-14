@@ -1,0 +1,1115 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper, hmargin={0.6in,0.6in}, vmargin={0.5in,0.8in}, headsep=0pt, headheight=0pt]{geometry}
+\usepackage{layout}
+%\usepackage{mathpazo}
+%\usepackage{fontspec}
+%\setmainfont{Hoefler Text}
+%\setmainfont{Optima}
+%\setmainfont{Times}
+%\setmainfont{Times New Roman}
+%\setmainfont{Adobe Hebrew}
+
+%\setmainfont{Arial}
+%\usepackage{upgreek}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{ulem}
+\usepackage{url}
+%\usepackage{showframe}
+\usepackage{graphicx,psfrag,epsfig,sidecap,wrapfig}
+\usepackage[abs]{overpic}
+\usepackage{totpages}
+%\usepackage[multiple,ragged]{footmisc}
+\usepackage{verbatim}
+%\usepackage{fullpage}
+%\usepackage{authblk}
+%\usepackage[page,title]{appendix}
+\usepackage{xcolor}
+\usepackage[linkbordercolor=white]{hyperref}
+\usepackage{prettyref}
+%\usepackage{feynmf,pgf,pgfarrows,xcolor}
+\usepackage[symbol,perpage,splitrule]{footmisc}
+\usepackage{amsmath,amsthm,amssymb,gensymb,bm}
+\usepackage{textcomp}
+\usepackage{mathcomp}
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{scalefnt}
+\usepackage{enumerate}
+\usepackage{pstricks}
+\usepackage{url,lscape}
+
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\DeclareCaptionLabelSeparator{vert}{ |  }
+\captionsetup{labelsep=vert}
+
+% Page/text width
+%\addtolength{\hoffset}{-0.3in} 
+%\addtolength{\textwidth}{152 pt}
+%\addtolength{\oddsidemargin}{-54 pt}
+%\addtolength{\marginparwidth}{-90pt}
+%\addtolength{\marginparpush}{-5 pt}
+% Page/text height
+%\addtolength{\textheight} {80pt}
+%\addtolength{\voffset}{-.5in} 
+%\addtolength{\topmargin}{17pt}
+
+\renewcommand{\baselinestretch}{1.03}
+\addtolength{\parskip}{2mm}
+%\newrefformat{sec}{\hyperref[{#1}]{Section~\ref*{#1}}}
+\allowdisplaybreaks
+\newcommand{\ChrFourPlot}[3]{
+\begin{figure}[t!]
+\renewcommand{\figurename}{Haplotype-specific copy-number plot}
+\renewcommand{\thefigure}{}
+\caption[#2]{#3}
+\begin{overpic}[width=.95\textwidth,tics=20,trim=0 0 0 0,clip]
+{#1_chr4.pdf}
+\put(15,215){\color{blue} \textsf{Homolog A}}
+\put(15,175){\color{red} \textsf{Homolog B}}
+\put(15,95){\textsf{total}}
+\put(502,0){\scriptsize \textsf{(Mb)}}
+\end{overpic}
+\vspace{2cm}
+
+\begin{overpic}[width=.95\textwidth,tics=20,trim=20 0 0 25,clip]
+{#1_chr4_0-50Mb.pdf}
+\put(500,0){\large \textsf{(Mb)}}
+\end{overpic}\\
+
+%\begin{overpic}[width=.9\textwidth,tics=20,trim=70 0 0 25,clip]
+%{#1_chr4_0-16.5Mb.pdf}
+%\end{overpic}
+\end{figure}
+\pagebreak
+
+\begin{figure}[t!]
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 25,clip]
+{#1_chr4_17-22Mb.pdf}
+\end{overpic}\vspace{1cm}
+
+\begin{overpic}[scale=0.42,tics=20,trim=85 0 67 25,clip]
+{#1_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\hspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=100 0 40 25,clip]
+{#1_chr4_26.5-27.8Mb.pdf}
+\end{overpic}
+\phantomcaption
+\end{figure}
+\pagebreak
+
+\begin{figure}[t!]
+\begin{overpic}[scale=0.42,tics=20,trim=280 0 170 25,clip]
+{#1_chr4_30-31Mb.pdf}
+\end{overpic}\hfill
+\begin{overpic}[scale=0.42,tics=20,trim=290 0 170 25,clip]
+{#1_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\hfill
+\begin{overpic}[scale=0.42,tics=20,trim=40 0 75 25,clip]
+{#1_chr4_36-39Mb.pdf}
+\end{overpic}\vspace{1cm}
+
+\begin{overpic}[scale=0.42,tics=20,trim=100 0 120 25,clip]
+{#1_chr4_39-41.5Mb.pdf}
+\end{overpic}\hspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=75 0 720 25,clip]
+{#1_chr4_41.5-46Mb.pdf}
+\end{overpic}
+\phantomcaption
+\end{figure}
+\pagebreak
+
+\begin{figure}[t!]
+\begin{overpic}[scale=0.42,tics=20,trim=400 0 0 25,clip]
+{#1_chr4_41.5-46Mb.pdf}
+\end{overpic}\hspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=60 0 0 25,clip]
+{#1_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\vspace{1cm}
+
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 50 25,clip]
+{#1_chr4_47.1-48Mb.pdf}
+\end{overpic}
+\begin{overpic}[scale=0.42,tics=20,trim=14 0 0 25,clip]
+{#1_chr4_48-49Mb.pdf}
+\end{overpic}
+\end{figure}}
+
+
+\begin{document}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+\renewcommand\listfigurename{Haplotype-specific copy-number}
+\listoffigures
+\thispagestyle{empty}
+
+\pagebreak
+\clearpage
+\pagenumbering{arabic}
+
+\ChrFourPlot{F11_13}{Subclone a1}{Subclone a1 (F11\_13)}
+\ChrFourPlot{F11_18}{Subclone a1}{Subclone a1 (F11\_18)}
+\ChrFourPlot{F11_9}{Subclone a2}{Subclone a2 (F11\_9)}
+\ChrFourPlot{F11_6}{Subclone a3}{Subclone a3 (F11\_6)}
+\ChrFourPlot{F11_10}{Subclone a4}{Subclone a4 (F11\_10)}
+\ChrFourPlot{F11_5}{Subclone a4}{Subclone a4 (F11\_5)}
+\ChrFourPlot{F11_25}{Subclone a4}{Subclone a4 (F11\_25)}
+\ChrFourPlot{F11_26}{Subclone a5}{Subclone a5 (F11\_26)}
+\ChrFourPlot{F11_3}{Subclone a6}{Subclone a6 (F11\_3)}
+\clearpage
+\end{document}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.35,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 350 0 330,clip]
+{F11_6_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 300 0 220,clip]
+{F11_10_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 300 0 225,clip]
+{F11_26_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 400 0 300,clip]
+{F11_3_chr4_0-16.5Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.35,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_0-16.5Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+\end{document}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 330,clip]
+{F11_6_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 220,clip]
+{F11_10_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 225,clip]
+{F11_26_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 300,clip]
+{F11_3_chr4_17-22Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_17-22Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_26_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 200,clip]
+{F11_3_chr4_24.7-26.5Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_24.7-26.5Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_26_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 200,clip]
+{F11_3_chr4_26.5-27.8Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_26.5-27.8Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=280 250 170 200,clip]
+{F11_13_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 250 170 200,clip]
+{F11_9_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 350 170 330,clip]
+{F11_6_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 300 170 200,clip]
+{F11_10_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 300 170 200,clip]
+{F11_5_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 300 170 200,clip]
+{F11_25_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 300 170 200,clip]
+{F11_26_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 400 170 200,clip]
+{F11_3_chr4_30-31Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=280 0 170 500,clip]
+{F11_13_chr4_30-31Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=290 250 170 200,clip]
+{F11_13_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 250 170 200,clip]
+{F11_9_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 350 170 330,clip]
+{F11_6_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 300 170 200,clip]
+{F11_10_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 300 170 200,clip]
+{F11_5_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 300 170 200,clip]
+{F11_25_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 300 170 200,clip]
+{F11_26_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 400 170 200,clip]
+{F11_3_chr4_32.5-33.5Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=290 0 170 500,clip]
+{F11_13_chr4_32.5-33.5Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 330,clip]
+{F11_6_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_26_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 200,clip]
+{F11_3_chr4_36-39Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_36-39Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 170,clip]
+{F11_26_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 170,clip]
+{F11_3_chr4_39-41.5Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_39-41.5Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 170,clip]
+{F11_26_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 170,clip]
+{F11_3_chr4_41.5-46Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_41.5-46Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 170,clip]
+{F11_26_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 170,clip]
+{F11_3_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_46.5-47.1Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 360,clip]
+{F11_13_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 360,clip]
+{F11_9_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 500,clip]
+{F11_6_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_10_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_5_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_25_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 400,clip]
+{F11_26_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 490,clip]
+{F11_3_chr4_46.5-47.1Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+%\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+%{F11_13_chr4_46.5-47.1Mb.pdf}
+%\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 170,clip]
+{F11_26_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 170,clip]
+{F11_3_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_47.1-48Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 360,clip]
+{F11_13_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 360,clip]
+{F11_9_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 500,clip]
+{F11_6_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_10_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_5_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_25_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 400,clip]
+{F11_26_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 490,clip]
+{F11_3_chr4_47.1-48Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+%\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+%{F11_13_chr4_46.5-47.1Mb.pdf}
+%\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_13_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 250 0 200,clip]
+{F11_9_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 350 0 200,clip]
+{F11_6_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_10_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_5_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 200,clip]
+{F11_25_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 300 0 170,clip]
+{F11_26_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 400 0 170,clip]
+{F11_3_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+{F11_13_chr4_48-49Mb.pdf}
+\end{overpic}
+\end{center}
+\end{figure}
+
+\begin{figure}[t!]
+\begin{center}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 360,clip]
+{F11_13_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{1mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 360,clip]
+{F11_9_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 500,clip]
+{F11_6_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_10_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_5_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 390,clip]
+{F11_25_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 70 0 400,clip]
+{F11_26_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{2mm}
+\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 490,clip]
+{F11_3_chr4_48-49Mb.pdf}
+\end{overpic}\\\vspace{5mm}
+%\begin{overpic}[scale=0.42,tics=20,trim=0 0 0 500,clip]
+%{F11_13_chr4_46.5-47.1Mb.pdf}
+%\end{overpic}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newcommand{\GenomeWidePlot}[1]{
+\begin{overpic}[width=.95\textwidth,tics=20,trim=75 0 100 200,clip]
+	{GenomeWidePlots/#1_allelicCov_1Mb.pdf}
+%	\put(0,78){\textbf{\textsf{\Large A}}}
+	\put(-10,50){#1}
+	\put(13,5){\sf \scriptsize Chr}
+%	\put(140,100){\parbox[b]{15mm}{{\scriptsize\color{blue} \sf allele A}}}
+%	\put(240,100){\parbox[b]{15mm}{{\scriptsize\color{red} \sf allele B}}}
+\end{overpic}\vspace{2mm}
+}
+
+\newcommand{\SingleChrPlot}[3]{
+\begin{overpic}[scale=#3,percent,trim=75 90 130 175,clip]
+	{#1/#2_#1_1Mb.pdf}
+%	\put(-10,20){#1}
+	\put(-6,7){#2}
+%	\put(1,0){\scriptsize 0}
+%	\put(1,4.5){\scriptsize 1}
+%	\put(1,9){\scriptsize 2}
+%	\put(1,13.5){\scriptsize 4}
+\end{overpic}\vspace{3mm}
+}
+
+\newcommand{\SingleChrPlotWithBand}[3]{
+\begin{overpic}[scale=#3,percent,trim=75 0 130 175,clip]
+	{#1/#2_#1_1Mb.pdf}
+	\put(-3,5){#1}
+	\put(-6,15){#2}
+%	\put(1,8){\scriptsize 0}
+%	\put(1,12.5){\scriptsize 1}
+%	\put(1,17){\scriptsize 2}
+%	\put(1,21.5){\scriptsize 4}
+\end{overpic}
+}
+\newcommand{\CNPlot}[3]{
+\begin{figure}[t!]
+\caption[#2]{#3}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 100 125,clip]
+	{chr1/#1_chr1_1Mb.pdf}
+%	\put(0,78){\textbf{\textsf{\Large A}}}
+	\put(60,70){\parbox[b]{15mm}{{\scriptsize\color{blue} \sf allele A}}}
+	\put(120,70){\parbox[b]{15mm}{{\scriptsize\color{red} \sf allele B}}}
+	\put(15,70){\textsf{chr.1}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=125 0 170 125,clip]
+{chr22/#1_chr22_1Mb.pdf}
+	\put(155,70){\textsf{chr.22}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 120 125,clip]
+{chr2/#1_chr2_1Mb.pdf}
+	\put(15,70){\textsf{chr.2}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=125 0 130 125,clip]
+{chr21/#1_chr21_1Mb.pdf}
+	\put(162,70){\textsf{chr.21}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 100 125,clip]
+{chr3/#1_chr3_1Mb.pdf}
+	\put(15,70){\textsf{chr.3}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=125 0 145 125,clip]
+{chr20/#1_chr20_1Mb.pdf}
+	\put(172,70){\textsf{chr.20}}
+\end{overpic}\\
+\vspace{2mm}
+	
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 90 125,clip]
+{chr4/#1_chr4_1Mb.pdf}
+	\put(15,70){\textsf{chr.4}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=125 0 100 125,clip]
+{chr19/#1_chr19_1Mb.pdf}
+	\put(179,70){\textsf{chr.19}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 130 125,clip]
+{chr5/#1_chr5_1Mb.pdf}
+	\put(15,70){\textsf{chr.5}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=115 0 90 125,clip]
+{chr18/#1_chr18_1Mb.pdf}
+	\put(200,70){\textsf{chr.18}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 130 125,clip]
+{chr6/#1_chr6_1Mb.pdf}
+	\put(15,70){\textsf{chr.6}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=95 0 140 125,clip]
+{chr17/#1_chr17_1Mb.pdf}
+	\put(195,70){\textsf{chr.17}}		
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 100 125,clip]
+{chr7/#1_chr7_1Mb.pdf}
+	\put(15,70){\textsf{chr.7}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=95 0 90 125,clip]
+{chr16/#1_chr16_1Mb.pdf}
+	\put(213,70){\textsf{chr.16}}
+\end{overpic}\\
+\phantomcaption
+\end{figure}
+\pagebreak
+
+\begin{figure}[t!]{\ContinuedFloat}
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 120 125,clip]
+{chr8/#1_chr8_1Mb.pdf}
+	\put(15,70){\textsf{chr.8}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=75 0 150 125,clip]
+{chr15/#1_chr15_1Mb.pdf}
+	\put(205,70){\textsf{chr.15}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 100 125,clip]
+{chr9/#1_chr9_1Mb.pdf}
+	\put(15,70){\textsf{chr.9}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=75 0 110 125,clip]
+{chr14/#1_chr14_1Mb.pdf}
+	\put(220,70){\textsf{chr.14}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 130 125,clip]
+{chr10/#1_chr10_1Mb.pdf}
+	\put(15,70){\textsf{chr.10}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=75 0 135 125,clip]
+{chr13/#1_chr13_1Mb.pdf}
+	\put(218,70){\textsf{chr.13}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 120 125,clip]
+{chr11/#1_chr11_1Mb.pdf}
+	\put(15,70){\textsf{chr.11}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}
+\hfill\begin{overpic}[scale=0.25,tics=20,trim=75 0 125 125,clip]
+{chr12/#1_chr12_1Mb.pdf}
+	\put(230,70){\textsf{chr.12}}
+\end{overpic}\\
+\vspace{2mm}
+
+\begin{overpic}[scale=0.25,tics=20,trim=75 0 100 125,clip]
+{chrX/#1_chrX_1Mb.pdf}
+	\put(15,70){\textsf{chr.X}}
+	\put(1,22){\scriptsize 0}
+	\put(1,35){\scriptsize 1}
+	\put(1,48){\scriptsize 2}
+	\put(1,60){\scriptsize 4}
+	\put(1,73){\scriptsize 8}
+\end{overpic}\hfill\begin{overpic}[scale=0.25,tics=20,trim=75 0 110 125,clip]
+{chrY/#1_chrY_1Mb.pdf}
+	\put(193,70){\textsf{chr.Y}}	
+\end{overpic}\\
+%\renewcommand{\thefigure}{#3}
+\end{figure}}
+
+
+
+\renewcommand{\figurename}{Genome-wide allelic copy number}
+\begin{figure}[t!]
+\renewcommand{\thefigure}{A}
+\caption[Genome-wide average allelic copy number of a pool of 100 cells]{}
+\GenomeWidePlot{H1}
+\end{figure}\clearpage
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\renewcommand{\thefigure}{}
+\CNPlot{H1}{Chromosome-specific average allelic copy number of a pool of cells}{ }\clearpage
+
+\renewcommand{\figurename}{Genome-wide allelic copy number}
+\begin{figure}[t!]
+\renewcommand{\thefigure}{B}
+\caption[Genome-wide allelic copy number of 31 cells with a mostly diploid genome]{Cells with a mostly diploid genome.}
+\begin{flushright}
+\GenomeWidePlot{A2}\\
+\GenomeWidePlot{A3}\\
+\GenomeWidePlot{A9}\\
+\GenomeWidePlot{A11}\\
+\GenomeWidePlot{B4}\\
+\GenomeWidePlot{B6}\\
+\GenomeWidePlot{B8}\\
+\GenomeWidePlot{B9}
+\end{flushright}
+\end{figure}\pagebreak
+\begin{figure}[t!]
+\phantomcaption
+\begin{flushright}
+\GenomeWidePlot{B12}\\
+\GenomeWidePlot{C11}\\
+\GenomeWidePlot{D3}\\
+\GenomeWidePlot{D6}\\
+\GenomeWidePlot{E1}\\
+\GenomeWidePlot{E4}\\
+\GenomeWidePlot{E7}\\
+\GenomeWidePlot{E10}
+\end{flushright}
+\end{figure}\pagebreak
+\begin{figure}[t!]
+\phantomcaption
+\begin{flushright}
+\GenomeWidePlot{F8}\\
+\GenomeWidePlot{G2}\\
+\GenomeWidePlot{G7}\\
+\GenomeWidePlot{G9}\\
+\GenomeWidePlot{G10}\\
+\GenomeWidePlot{G11}\\
+\GenomeWidePlot{G12}\\
+\GenomeWidePlot{H2}\\
+\end{flushright}
+\end{figure}\pagebreak
+\begin{figure}[t!]
+\phantomcaption
+\begin{flushright}
+\GenomeWidePlot{H4}\\
+\GenomeWidePlot{H5}\\
+\GenomeWidePlot{H6}\\
+\GenomeWidePlot{H7}\\
+\GenomeWidePlot{H10}\\
+\GenomeWidePlot{H11}\\
+\GenomeWidePlot{H12}\\
+\end{flushright}
+\end{figure}
+
+\begin{figure}[t!]
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\renewcommand{\thefigure}{}
+\caption[Allelic copy number of Chr.3 in cells with incomplete 3p UPD]{Cells with partial 3p UPD.}
+\begin{center}
+\SingleChrPlot{chr3}{A2}{0.4}\\
+\SingleChrPlot{chr3}{A3}{0.4}\\
+\SingleChrPlot{chr3}{E1}{0.4}\\
+\SingleChrPlot{chr3}{E7}{0.4}\\
+\SingleChrPlotWithBand{chr3}{H1}{0.4}\\
+\end{center}
+\end{figure}\pagebreak
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{C}
+\caption[Genome-wide allelic copy number of 7 cells with a near diploid genome]{Cells with a near diploid genome.}
+\begin{flushright}
+\GenomeWidePlot{C7}\\
+\GenomeWidePlot{E9}\\
+\GenomeWidePlot{A12}\\
+\GenomeWidePlot{C9}\\
+\GenomeWidePlot{D12}\\
+\GenomeWidePlot{F1}\\
+\GenomeWidePlot{H8}\\
+\end{flushright}
+\end{figure}
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{}
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\caption[Allelic copy number of chromosomes with SCNAs]{Cells with a near diploid genome plus 17p loss.}
+\begin{center}
+\SingleChrPlotWithBand{chr1}{H8}{0.4}\\
+\SingleChrPlot{chr1}{A12}{0.4}\\
+\SingleChrPlot{chr1}{C9}{0.4}\\
+\SingleChrPlot{chr1}{D12}{0.4}\\
+\SingleChrPlotWithBand{chr1}{F1}{0.4}\\\vspace{5mm}
+\SingleChrPlotWithBand{chr3}{E9}{0.4}\\\vspace{5mm}
+\SingleChrPlotWithBand{chr4}{C7}{0.4}
+\end{center}
+\end{figure}\clearpage
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{D}
+\caption[Genome-wide allelic copy number of 14 cells with 9p UPD]{Cells with a near diploid genome plus 9p UPD.}
+\begin{flushright}
+\GenomeWidePlot{A5}\\
+\GenomeWidePlot{A6}\\
+\GenomeWidePlot{A10}\\
+\GenomeWidePlot{B3}\\
+\GenomeWidePlot{B11}\\
+\GenomeWidePlot{C10}\\
+\GenomeWidePlot{C12}\\
+\GenomeWidePlot{D9}
+\end{flushright}
+\end{figure}\pagebreak
+\begin{figure}[t!]
+\phantomcaption
+\begin{flushright}
+\GenomeWidePlot{E12}\\
+\GenomeWidePlot{F6}\\
+\GenomeWidePlot{G3}\\
+\GenomeWidePlot{G4}\\
+\GenomeWidePlot{G6}\\
+\GenomeWidePlot{D10}
+\end{flushright}
+\end{figure}
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{}
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\caption[Allelic copy number of Chr.9]{Cells with a near diploid genome plus 17p loss.}
+\begin{center}
+\SingleChrPlot{chr9}{G4}{0.4}\\
+\SingleChrPlot{chr9}{G3}{0.4}\\
+\SingleChrPlot{chr9}{B3}{0.4}\\
+\SingleChrPlot{chr9}{A10}{0.4}\\
+\SingleChrPlot{chr9}{A5}{0.4}\\
+\SingleChrPlotWithBand{chr9}{F6}{.4}
+\end{center}
+\end{figure}\clearpage
+\begin{figure}[t!]
+\phantomcaption
+\begin{center}
+\SingleChrPlot{chr9}{A5}{0.35}\\
+\SingleChrPlot{chr9}{A6}{0.35}\\
+\SingleChrPlot{chr9}{B11}{0.35}\\
+\SingleChrPlot{chr9}{C10}{0.35}\\
+\SingleChrPlot{chr9}{C12}{0.35}\\
+\SingleChrPlot{chr9}{D9}{0.35}\\
+\SingleChrPlot{chr9}{E12}{0.35}\\
+\SingleChrPlot{chr9}{G6}{0.35}\\
+\SingleChrPlotWithBand{chr9}{D10}{0.35}
+\end{center}
+\end{figure}\pagebreak
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{E}
+\caption[Genome-wide allelic copy number of 4 cells with 17p loss]{Cells with a near diploid genome plus 17p loss.}
+\begin{flushright}
+\GenomeWidePlot{B7}\\
+\GenomeWidePlot{D2}\\
+\GenomeWidePlot{E2}\\
+\GenomeWidePlot{E5}\\
+\end{flushright}
+\end{figure}\clearpage
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{}
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\caption[Allelic copy number of Chr.17]{Cells with a near diploid genome plus 17p loss.}
+\begin{center}
+\SingleChrPlot{chr17}{B7}{0.4}\\
+\SingleChrPlot{chr17}{D2}{0.4}\\
+\SingleChrPlot{chr17}{E2}{0.4}\\
+\SingleChrPlotWithBand{chr17}{E5}{0.4}\\
+\end{center}
+\end{figure}
+\begin{figure}[t]
+\renewcommand{\thefigure}{}
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\caption[Additional arm-level and segmental SCNAs]{Cells with a near diploid genome plus 17p loss.}
+\begin{center}
+\SingleChrPlotWithBand{chr6}{E2}{0.4}\\\vspace{5mm}
+\SingleChrPlot{chr18}{B7}{0.4}\\
+\SingleChrPlotWithBand{chr18}{E5}{0.4}\\
+\end{center}
+\end{figure}\clearpage
+
+\begin{figure}[t!]
+\renewcommand{\thefigure}{F}
+\caption[Genome-wide allelic copy number of cell C4]{Cells with a near diploid genome plus 17p loss.}
+\begin{flushright}
+\GenomeWidePlot{C4}
+\end{flushright}
+\end{figure}
+\begin{figure}[t]
+\renewcommand{\thefigure}{}
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\caption[Allelic copy number of Chr.17 and Chr.18]{Cells with a near diploid genome plus 17p loss.}
+\begin{center}
+\SingleChrPlotWithBand{chr17}{C4}{0.4}\\\vspace{5mm}
+\SingleChrPlotWithBand{chr18}{C4}{0.4}
+\end{center}
+\end{figure}\clearpage
+
+\renewcommand{\figurename}{Chromosome-specific allelic copy number}
+\begin{figure}[t!]
+\renewcommand{\thefigure}{G}
+\captionlistentry{Chromosome-specific allelic copy number of aneuploid cells}
+\end{figure}
+\renewcommand{\thefigure}{}
+\CNPlot{D7}{D7 with WGD}{ aneuploid D7}\clearpage
+\CNPlot{F2}{F2 with WGD}{ aneuploid F2}\clearpage
+\CNPlot{C5}{C5 with WGD}{ aneuploid C5}\clearpage
+\CNPlot{F7}{F7 with WGD}{ aneuploid F7}\clearpage
+\CNPlot{C1}{C1 with WGD}{ aneuploid C1}\clearpage
+\CNPlot{C2}{C2 with WGD}{ aneuploid C2}\clearpage
+\CNPlot{D5}{D5 with WGD}{ aneuploid D5}\clearpage
+\CNPlot{F11}{F11 with WGD}{ aneuploid F11}\clearpage
+\CNPlot{H9}{H9 with WGD}{ aneuploid H9}\clearpage
+\CNPlot{D11}{D11 pre-WGD}{ aneuploid D11}\clearpage
+\CNPlot{F12}{F12 pre-WGD}{ aneuploid F12}\clearpage
+\CNPlot{G1}{G1 pre-WGD}{ aneuploid G1}\clearpage
+
+\end{document}
