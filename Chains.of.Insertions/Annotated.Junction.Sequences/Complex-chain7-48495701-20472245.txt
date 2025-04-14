@@ -1,0 +1,53 @@
+chain7 
+
+PacBio CCS read: read length, clipped length 1, clipped length, junction length
+976347: 9167bp, 7771bp, 2203bp, 807bp
+3293184: 6147bp, 5238bp, 1718bp, 809bp
+
+junction sequence from read 3293184
+
+  48495699(3')          908             8bp insertion
+->46173385-3362(-)      917-944         4bp homology
+->42324449-4524(+)      941-1016        16bp insertion
+->45760451-0218(-)      1033-1270       2bp insertion
+->42325125-4917(-)      1273-1482       5bp homology
+->36131837-1688(-)      1478-1627       7bp insertion
+->36131493-1549(+)      1635-1691       27bp insertion
+->20472245(3')          1719
+
+
+GGCATCTCAT GGAGCTTCCA GTAGAGTGGG CAGATGGCCA CTAGTTTTTA  850
+TATAAATGTA AAACTGAGGT TCTGACCTGT GATCTGCTTA TGTGCCTCTG  900
+CAGTAAGGga cctgacttag ggagatca                                  48495699(3')
+        AG TATTAG                                               8bp insertion
+                 TCTT CCACTGAGGA CTCATTAATT TGGAattttc          46173385-3362(-)
+ttttaactaac                                 ||||                4bp homology
+                      gtgaatgaat gcattcctga TGGATAGTTT  950     42324449-4524(+)
+GCCAAGTTAG ATCTGTAGAG ACCAAGAATT AAGGGATGAT TTGGCTGACA  1000
+AAAACAAGAA ATGGGGaaag gattccctat ttaata
+                 TGTT AACATTGAAA TG                             16bp insertion
+             atacaacc agaaacacat taTTAATTAT TCTGGATGCT  1050    45760451-0218(-)
+GAACAAGTAG AAAGGTTGAA CCTAAAATGA TATTGGAATA ACTTCAGAAA  1100
+ATCAGTTTTC TAAATCATTG CATAATGTAA GTGAATGTAT CTGCATATTA  1150
+AAATAGATTT CCCTTCTTAA TATATTTAGA AGTAAAATTT AATTATCTTA  1200
+TAAAATATGT AATTTTATTT TAAAAATATT AATGGTTTTT AACTTTCTTT  1250
+CTGGCTTTCC TATGCAAAAA tattttattc tctaactata
+                      CA                                        2bp insertion
+                        ACCTGTTG TTTCCTGACT TTTTAATGAT  1300    42325125-4917(-)
+CGCCATTCTA ACTGGTGTGA GATGGTATCT CATTGTGGTT TTGATTTGCA  1350
+TTTCTCTAAT GACCAGTAGT GAGCATTTTT TCATGTGTCT CTTGGCTGCA  1400
+TAAATGTCTT CTTTTGAGAA GTGTCTGCTC ATATCCTTTG CCCACTTTTT  1450
+GATGGGGTTG TTTTTTTCTT GTAAATGTTG TTtaagttat ttgtagattctg
+                             ||| ||                             5bp homology
+             gaatgtta ccttcatTTG TTACAGTCAC TCAGTGTTAG  1500    36131837-1688(-)
+TACATTTTGC AGCTATACAT GAATCACATA TATGTTATGT TTTAGCAGGA  1550
+GCATAACCTT ATTGGGAATC TTCATACCAT GTTAGTTTCA TAATAGCATA  1600
+AGGCCTTTCT TAAGCAAGAA ATAATTAaaa taccttgact agctctg
+                             TTT CTCC                           7bp insertion
+               tgtata actatataaa cacaATCTTC CATTGGCTTT  1650    36131493-1549(+)
+ATTATTCTAA CATGCAAGTG AAGGCATCTT GTAATAGAGG Tataaagttgttataatatat
+                                             TTTCTTCTA  1700    27bp insertion
+GGGTTTTTAT GAATATCT
+atatagatct atatatagAT ATATAGATCT ATATATATAT ACACACACAC  1750    20472245(3')
+ACACATTTCT AAAGCAATTT TTCCTAAATA TTGGTTAtAT TTTGGCAAAG  1800
+CATCAGTTGA TAATGATATG CTATCAATAC TTAATTCATA TTTGTTTTGG  1850
