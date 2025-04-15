@@ -1,0 +1,5 @@
+Chain13_shortReads	307	0	116	-	hg38:chr4:46160000-46180000	20001	11829	11946	115	117	60	NM:i:2	ms:i:220	AS:i:220	nn:i:0	tp:A:P	cm:i:20	s1:i:106	s2:i:21	de:f:0.0171	rl:i:0	cg:Z:52M1D64M
+Chain13_shortReads	307	113	170	+	hg38:chr4:36120000-36140000	20001	12504	12561	56	57	54	NM:i:1	ms:i:108	AS:i:108	nn:i:0	tp:A:P	cm:i:8	s1:i:49	s2:i:0	de:f:0.0175	rl:i:0	cg:Z:57M
+Chain13_shortReads	307	213	264	+	hg38:chr4:48490000-48510000	20001	7874	7925	51	51	40	NM:i:0	ms:i:102	AS:i:102	nn:i:0	tp:A:P	cm:i:8	s1:i:40	s2:i:0	de:f:0	rl:i:0	cg:Z:51M
+Chain13_shortReads	307	168	218	+	hg38:chr4:36120000-36140000	20001	11546	11596	50	50	53	NM:i:0	ms:i:100	AS:i:100	nn:i:0	tp:A:P	cm:i:7	s1:i:48	s2:i:0	de:f:0	rl:i:0	cg:Z:50M
+Chain13_shortReads	307	276	307	-	hg38:chr4:38230000-38240000	10001	6723	6754	31	31	20	NM:i:0	ms:i:62	AS:i:62	nn:i:0	tp:A:P	cm:i:4	s1:i:29	s2:i:0	de:f:0	rl:i:0	cg:Z:31M
